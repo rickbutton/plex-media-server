@@ -50,6 +50,7 @@ class plexmediaserver (
   package { 'plexmediaserver':
     provider => $plex_provider,
     source   => "/tmp/${plex_pkg}",
+    ensure   => "latest",
   }
   if $plexmediaserver::params::plex_config {
     file { 'plexconfig':
